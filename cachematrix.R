@@ -11,7 +11,7 @@ makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   ##Function for Calculating Inverse of the matrix
   calinv <- function(y) {
-    x <<-solve(y)
+    x <<- y
     m <<- NULL
   }
   ##Function for retrieving the value of matrix
@@ -41,6 +41,6 @@ cacheSolve <- function(x, ...) {
   }
   data <- x$get()
   m <- solve(data)
-  x$setmean(m)
+  x$setinv(m)
   m
 }
